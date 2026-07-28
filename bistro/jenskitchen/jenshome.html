@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jen's Kitchen</title>
+<style>
+body {
+	margin: 0 20%;
+	font: 1em/1.5em sans-serif;
+  background-color: #faf2e4;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+	font: italic bold 2rem Futura, sans-serif; 
+  color: orange; 
+  margin-top: 2rem;
+  text-align: center;
+}
+h2 {
+	font-size: 1.25em;
+  color: darkmagenta;
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+img {
+	width: 100%;
+  display: block;
+}
+img.icon {
+  width: 80px;
+  height: 20px;
+  margin-right: 1em;
+}
+nav {
+    width: 100%;
+    background-color: #fce6b7;
+    height: 50px;
+    margin-top: 20px;
+    margin-top: 0;
+    border-bottom: 5px solid orange;
+    }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    }
+  nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 17px;
+    color: darkmagenta;
+  }
+  nav a:hover {
+    font-weight: 600;
+  }
+
+ul:not(nav ul) {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 1.5em 0;
+  padding: 0;
+}
+ul:not(nav ul) li a {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #fce6b7; 
+  border: 1.5px solid orange;
+  border-radius: 50px;
+  color: darkorange;
+  text-decoration: none;
+  font: 1rem sans-serif;
+  font-weight: 900;
+  transition: all 0.2s ease;
+}
+ul:not(nav ul) li a:hover {
+  transform: scale(1.05);
+  opacity: 0.5;
+}
+.footer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid orange;
+  margin: 3em 10% 2em 10%;
+  padding-top: 1.5em;
+}
+
+.footer-link img.icon {
+  width: 80px;
+  height: 20px;
+  margin-right: 0.5em; 
+}
+
+.footer-link a {
+  color: darkmagenta;
+  text-decoration: none;
+}
+.footer-link a:hover {
+  font-weight: 600;
+}
+</style>
+
+</head>
+
+<body>
+
+<img src="images/jenskitchen.jpg" alt="Jen's Kitchen">
+
+
+<nav>
+<ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../menu/menu.html">Menu</a></li>
+    <li><a href="../bistronews.html">News</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+</ul>
+
+</nav>
+<h1>Welcome to Jen’s Kitchen...</h1>
+<p>People who know me know that I love to cook. I’ve created this site to share some of my favorite recipes and online food resources. <i>Bon Appetit!</i> </p>
+
+
+<h2>From Jen’s cookbook</h2>
+
+<div class="text">
+<ul>
+  <li><a href="recipes/tapenade.html">Tapenade (Olive Spread)</a></li>
+  <li><a href="recipes/salmon.html">Garlic Salmon</a></li>
+  <li><a href="recipes/pasta/linguine.html">Linguine with Clam Sauce</a></li>
+  <li><a href="recipes/pasta/couscous.html">Couscous with Peas and Mint</a></li>
+</ul>
+</div>
+<h2>Good food resources</h2>
+<ul>
+  <li><a href="https://www.foodnetwork.com/">The Food Network</a></li>
+  <li><a href="https://www.epicurious.com/">Epicurious</a></li>
+</ul>
+
+
+<p class="footer-link">
+  <img src="../jenskitchen/images/spoon.png" alt="" class="icon">
+  <a href="about.html">About this site</a>
+</p>
+
+
+</body>
+</html>
