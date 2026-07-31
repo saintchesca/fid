@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spacecraft Café - Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/omj4xbq.css">
+  <style>
+    body {
+      background-color: #e1f7ff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    header {
+        background-color: #e1f7ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+    }
+    .header-logo {
+        max-height: 200px;
+        width: auto;
+    }
+    .header-text h1 {
+        margin: 5px 0 0 0;
+        color: #2e3192;
+        font-size: 20px;
+        font-family: "baloo-paaji-2", sans-serif;
+    }
+
+.main-bg-wrapper {
+  background-image: url('../cafe/bg.png');
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px 0 60px;
+  width: 100%;
+}
+    nav {
+        width: 100%;
+        background-color: #c4eeff;
+        height: 50px;
+        border-bottom: 5px solid #2e3192;
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    nav li {
+        height: 100%;
+    }
+    nav a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 1.8rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #2e3192;
+        transition: 0.2s ease, color 0.2s ease;
+    }
+    nav a, footer nav a {
+        font-family: "baloo-paaji-2", sans-serif;
+        font-weight: 600;
+    }
+    nav a:hover {
+        background-color: #2e3192;
+        color: #fff8ef;
+    }
+    footer {
+        text-align: center;
+        padding: 12px 20px;
+        background-color: #e1f7ff;
+        border-top: 5px solid #2e3192;
+        margin-top: 0;
+    }
+
+    .hero-image-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .full-hero-img {
+        width: 100%;
+        height: 1215px;
+        object-fit: cover;
+        display: block;
+    }
+    .banner-img {
+  display: block;
+  margin: 60px auto 20px;
+  max-width: 60%;
+  width: 100%;
+  height: auto;
+}
+
+.pyramid-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 850px;
+      margin: 30px auto 50px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      border: 2px solid #c4eeff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(46, 49, 146, 0.08);
+    }
+
+    .pyramid-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .pyramid-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 220px;
+      margin: 0;
+    }
+
+    .pyramid-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(46, 49, 146, 0.15);
+    }
+
+    .pyramid-card figcaption {
+      margin-top: 10px;
+      font-family: "baloo-paaji-2", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #2e3192;
+    }
+
+    main section {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border: 2px solid #c4eeff;
+  border-radius: 16px;
+  padding: 24px 30px;
+  margin: 35px auto;
+  max-width: 800px;
+  box-shadow: 0 8px 20px rgba(46, 49, 146, 0.08);
+}
+
+
+main section h3 {
+  font-family: "baloo-paaji-2", sans-serif;
+  color: #2e3192;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #2e3192;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px dashed #a8dcf5;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  transform: translateX(6px);
+}
+
+.item-info {
+  font-family: "baloo-paaji-2", sans-serif;
+  color: #2e3192;
+  font-size: 16px;
+  padding-right: 15px;
+}
+
+.item-info strong {
+  font-size: 18px;
+  color: #1c1d66;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.item-price {
+  font-family: "baloo-paaji-2", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #2e3192;
+  white-space: nowrap;
+  background-color: #c4eeff;
+  padding: 2px 10px;
+  border-radius: 12px;
+}
+    footer nav {
+        width: auto;
+        height: 20px;
+        background: transparent;
+        border: none;
+        margin-bottom: 6px;
+    }
+
+    footer nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    footer nav a {
+        font-family: "baloo-paaji-2", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: #2e3192;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    }
+
+    footer nav a:hover {
+       background-color: #2e3192;
+        color: #fff8ef;
+    }
+    footer p {
+        margin: 15px 0 0 0;
+        font-size: 14px;
+        font-family: "baloo-paaji-2", sans-serif;
+        color: #2e3192;
+    }
+  </style>
+</head>
+<body>
+  <header>
+   <header>
+    <img src="logo.png" alt="Spacecraft Café Logo" class="header-logo">
+    <div class="header-text">
+      <h1>Out-of-this-world coffee &amp; alien delicacies!</h1>
+    </div>
+  </header>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="review.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <div class="main-bg-wrapper">
+    <div class="container">
+      <main>
+        <img src="text2.png" alt="Cosmic Refreshments Banner" class="banner-img">
+      
+      
+      <div class="pyramid-gallery">
+       
+        <div class="pyramid-row">
+          <figure class="pyramid-card">
+            <img src="../cafe/coffee.png" alt="Orbital Espresso & Brews">
+            <figcaption>Orbital Espresso &amp; Brews</figcaption>
+          </figure>
+          <figure class="pyramid-card">
+            <img src="../cafe/tea.png" alt="Starlight Steeped Teas & Cocoa">
+            <figcaption>Starlight Steeped Teas</figcaption>
+          </figure>
+        </div>
+
+       
+        <div class="pyramid-row">
+          <figure class="pyramid-card">
+            <img src="../cafe/drink.png" alt="Zero-Gravity Chillers">
+            <figcaption>Zero-Gravity Chillers</figcaption>
+          </figure>
+          <figure class="pyramid-card">
+            <img src="../cafe/breakfast.png" alt="Payload Provisions & Bites">
+            <figcaption>Payload Provisions</figcaption>
+          </figure>
+          <figure class="pyramid-card">
+            <img src="../cafe/pastries.png" alt="Asteroid Pastries & Galactic Sweets">
+            <figcaption>Asteroid Pastries</figcaption>
+          </figure>
+        </div>
+      </div>
+
+     
+      <section>
+        <h3>Orbital Espresso &amp; Brews</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <span class="item-info"><strong>Launchpad Espresso:</strong> Pure, concentrated rocket fuel to kickstart your orbit.</span>
+            <span class="item-price">$5.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Apollo Americano:</strong> Smooth espresso lengthened with hot water from the lunar base.</span>
+            <span class="item-price">$5.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Milky Way Latte:</strong> Creamy steamed milk swirled into rich espresso like a swirling galaxy.</span>
+            <span class="item-price">$5.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Crater Cappuccino:</strong> Frothy, pillowy foam dusted with dark cocoa dust.</span>
+            <span class="item-price">$5.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Interstellar Mocha:</strong> Dark espresso fused with rich chocolate nebula syrup.</span>
+            <span class="item-price">$5.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Moondust Macchiato:</strong> Espresso layered with vanilla and a drizzle of caramel stardust.</span>
+            <span class="item-price">$5.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Flat White Dwarf:</strong> Dense, velvety milk over a short double shot of espresso.</span>
+            <span class="item-price">$5.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Cryo Iced Coffee:</strong> Chilled coffee brewed cool to brave the void of space.</span>
+            <span class="item-price">$5.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Deep Space Cold Brew:</strong> Steeped over 18 hours for maximum gravity and zero bitterness.</span>
+            <span class="item-price">$5.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Starlight Steeped Teas &amp; Cocoa</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <span class="item-info"><strong>Nebula Green Tea:</strong> Soothing green tea leaves harvested from hydroponic bays.</span>
+            <span class="item-price">$3.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Solar Flare Black Tea:</strong> Bold, high-energy tea with radiant amber tones.</span>
+            <span class="item-price">$3.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Cosmic Herbal Tea:</strong> Caffeine-free botanical infusion for long deep-space hibernation.</span>
+            <span class="item-price">$3.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Supernova Chai Latte:</strong> Spiced black tea ignited with warm steamed milk.</span>
+            <span class="item-price">$3.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Meteor Matcha Latte:</strong> Ground shade-grown tea leaves whipped into creamy perfection.</span>
+            <span class="item-price">$3.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Dark Matter Hot Chocolate:</strong> Decadent melted chocolate topped with fluffy white cloud foam.</span>
+            <span class="item-price">$3.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Zero-Gravity Chillers</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <span class="item-info"><strong>Frost Giant Frappé:</strong> Blended icy coffee topped with a swirling cloud of whipped cream.</span>
+            <span class="item-price">$7.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Polaris Iced Latte:</strong> Chilled espresso poured over ice and your choice of milk.</span>
+            <span class="item-price">$7.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Supercluster Smoothies:</strong> Pureed cosmic fruits blended into a thick, refreshing slush.</span>
+            <span class="item-price">$7.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Milky Way Milkshakes:</strong> Thick, rich ice cream blended into a heavenly concoction.</span>
+            <span class="item-price">$7.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Boba Black Hole Tea:</strong> Sweet tea with chewy tapioca pearls floating at the bottom.</span>
+            <span class="item-price">$7.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Payload Provisions &amp; Bites</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <span class="item-info"><strong>Ignition Breakfast Sandwich:</strong> Fried egg, cheese, and savory cuts served on a toasted bun.</span>
+            <span class="item-price">$6.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Alien Avocado Toast:</strong> Crushed green avocado topped with seeds on toasted sourdough.</span>
+            <span class="item-price">$6.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Pressurized Panini:</strong> Warm, crispy pressed sandwich stuffed with savory galactic fillings.</span>
+            <span class="item-price">$6.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Warp-Drive Wrap:</strong> Fresh greens and proteins tightly wrapped for on-the-go space travelers.</span>
+            <span class="item-price">$6.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Sector-7 Salad:</strong> Fresh garden greens tossed in a bright planetary vinaigrette.</span>
+            <span class="item-price">$6.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Space-Station Bagel:</strong> Toasted bagel loaded with melted cheese and savory ham.</span>
+            <span class="item-price">$6.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Asteroid Pastries &amp; Galactic Sweets</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <span class="item-info"><strong>Crescent Moon Croissant:</strong> Golden, flaky, crescent-shaped layers of buttery goodness.</span>
+            <span class="item-price">$4.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Meteoric Muffin:</strong> Soft, freshly baked muffin packed with bursting fruit or chocolate chunks.</span>
+            <span class="item-price">$4.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Saturn-Ring Danish:</strong> Flaky pastry spiraled around a sweet cream or fruit center.</span>
+            <span class="item-price">$4.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Comet Cookies:</strong> Crispy on the outside, gooey on the inside, baked fresh daily.</span>
+            <span class="item-price">$4.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Blackout Brownies:</strong> Deep, fudgy chocolate squares rich enough to warp spacetime.</span>
+            <span class="item-price">$4.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Solar-Spiral Cinnamon Roll:</strong> Warm, rolled dough dripping with sweet glaze.</span>
+            <span class="item-price">$4.00</span>
+          </li>
+          <li class="menu-item">
+            <span class="item-info"><strong>Stardust Scones:</strong> Crumbly, buttery baked scones served best with warm tea.</span>
+            <span class="item-price">$4.00</span>
+          </li>
+        </ul>
+      </section>
+      </main>
+  </div>
+</div>
+  <footer>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="review.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <p>&copy; 2026 Spacecraft Café &amp; Co. Designed by Franchesca Saint louis</p>
+</footer>
+</body>
+</html>

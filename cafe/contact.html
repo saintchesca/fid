@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spacecraft Café - Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/omj4xbq.css">
+  <style>
+    body {
+        background-color: #e1f7ff;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    header {
+        background-color: #e1f7ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+    }
+    .header-logo {
+        max-height: 200px;
+        width: auto;
+    }
+    .header-text h1 {
+        margin: 5px 0 0 0;
+        color: #2e3192;
+        font-size: 20px;
+        font-family: "baloo-paaji-2", sans-serif;
+    }
+    
+    nav {
+        width: 100%;
+        background-color: #c4eeff;
+        height: 50px;
+        border-bottom: 5px solid #2e3192;
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    nav li {
+        height: 100%;
+    }
+    nav a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 1.8rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #2e3192;
+        transition: 0.2s ease, color 0.2s ease;
+    }
+    nav a, footer nav a {
+        font-family: "baloo-paaji-2", sans-serif;
+        font-weight: 600;
+    }
+    nav a:hover {
+        background-color: #2e3192;
+        color: #fff8ef;
+    }
+
+
+    .hero-image-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    .full-hero-img {
+        width: 100%;
+        height: 1100px;
+        object-fit: cover;
+        display: block;
+    }
+
+
+    .contact-overlay {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 1100px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 40px;
+        pointer-events: none;
+    }
+    .contact-overlay * {
+    pointer-events: auto; 
+}
+
+    main {
+        flex: 1;
+        font-family: "baloo-paaji-2", sans-serif;
+        transform: translateY(-50px);
+        display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+    }
+
+    .banner-img {
+        display: block;
+        margin-bottom: 20px;
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        margin-top: 70px;
+    }
+    main p {
+        font-size: 20px;
+        color: #2e3192;
+        line-height: 1.6;
+        margin: 15px 0;
+        font-weight: 600;
+    }
+
+    main a {
+        color: #2e3192;
+        text-decoration: underline;
+        font-weight: 700;
+    }
+
+    main a:hover {
+        color: #1c1d66;
+    }
+
+    .contact-phone-img {
+        max-width: 380px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+    .phone-text-container {
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateX(200px);
+    position: relative;
+    z-index: 5;
+}
+    .phone-text-container p {
+        font-family: "baloo-paaji-2", sans-serif;
+        font-size: 20px;
+        color: #fff8ef;
+        line-height: 1.6;
+        margin: 12px 0;
+        font-weight: 600;
+    }
+
+    .phone-text-container a {
+        color: white;
+        text-decoration: underline;
+        font-weight: 700;
+        transition: color 0.2s ease;
+    position: relative;
+    z-index: 10;
+    }
+    .phone-text-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.phone-text-container ul img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+}
+.social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+    .phone-text-container a:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    footer {
+        position: relative;
+    z-index: 999;
+    text-align: center;
+    padding: 12px 20px;
+    background-color: #e1f7ff;
+    border-top: 5px solid #2e3192;
+    margin-top: 0;
+    }
+
+    footer nav {
+        width: auto;
+        height: 20px;
+        background: transparent;
+        border: none;
+        margin-bottom: 6px;
+    }
+
+    footer nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    footer nav a {
+        font-family: "baloo-paaji-2", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: #2e3192;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    }
+
+    footer nav a:hover {
+       background-color: #2e3192;
+        color: #fff8ef;
+    }
+    footer p {
+        margin: 15px 0 0 0;
+        font-size: 14px;
+        font-family: "baloo-paaji-2", sans-serif;
+        color: #2e3192;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Spacecraft Café Logo" class="header-logo">
+    <div class="header-text">
+      <h1>Out-of-this-world coffee &amp; alien delicacies!</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+  </nav>
+  
+  <div class="hero-image-wrapper">
+    <img src="../cafe/photo3.png" alt="Spacecraft Cafe Interior" class="full-hero-img">
+    
+  
+    <div class="contact-overlay">
+      <main>
+        <img src="../cafe/text6.png" alt="Contact Us Banner" class="banner-img">
+
+     <div class="phone-text-container">
+        <img src="../cafe/phone.png" alt="Contact Phone" class="contact-phone-img">
+        <p>Have questions about space catering or reservations?</p>
+        <p>Email Head Office: <a href="mailto:service@spacecraftcafe.com">service@spacecraftcafe.com</a></p>
+    
+    <div class="social-container">
+    <p>Looking for astronomy updates? Follow us on:</p>
+    <ul>
+    <li><img src="../cafe/facebook.svg" alt="Facebook"></li>
+    <li><img src="../cafe/Instagram.svg" alt="Instagram"></li>
+    <li><img src="../cafe/X.svg" alt="X"></li>
+  </ul>
+</div>
+</div>
+</main>
+  </div>
+  </div>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 Spacecraft Café &amp; Co. Designed by Franchesca Saint Louis</p>
+  </footer>
+</body>
+</html>

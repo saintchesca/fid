@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spacecraft Café - Customer Reviews</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/omj4xbq.css">
+  <style>
+    body {
+        background-color: #e1f7ff;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    header {
+        background-color: #e1f7ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+    }
+    .header-logo {
+        max-height: 200px;
+        width: auto;
+    }
+    .header-text h1 {
+        margin: 5px 0 0 0;
+        color: #2e3192;
+        font-size: 20px;
+        font-family: "baloo-paaji-2", sans-serif;
+    }
+
+    .main-bg-wrapper {
+        background-image: url('../cafe/bg.png');
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px 0 60px;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        background-color: #c4eeff;
+        height: 50px;
+        border-bottom: 5px solid #2e3192;
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    nav li {
+        height: 100%;
+    }
+    nav a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 1.8rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #2e3192;
+        transition: 0.2s ease, color 0.2s ease;
+    }
+    nav a, footer nav a {
+        font-family: "baloo-paaji-2", sans-serif;
+        font-weight: 600;
+    }
+    nav a:hover {
+        background-color: #2e3192;
+        color: #fff8ef;
+    }
+
+    .banner-img {
+        display: block;
+        margin: 40px auto 20px;
+        max-width: 800px;
+        width: 200%;
+        height: auto;
+    }
+
+    main section {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        border: 2px solid #c4eeff;
+        border-radius: 16px;
+        padding: 28px 30px;
+        margin: 35px auto;
+        max-width: 800px;
+        box-shadow: 0 8px 20px rgba(46, 49, 146, 0.08);
+    }
+
+    main section h2 {
+        font-family: "baloo-paaji-2", sans-serif;
+        color: #2e3192;
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 25px;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #2e3192;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .reviews-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .review-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: #ffffff;
+        border: 2px solid #c4eeff;
+        border-radius: 12px;
+        padding: 18px 22px;
+        box-shadow: 0 4px 10px rgba(46, 49, 146, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .review-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(46, 49, 146, 0.15);
+    }
+
+    .review-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #2e3192;
+        flex-shrink: 0;
+    }
+
+    .review-content h3 {
+        margin: 0 0 6px 0;
+        font-family: "baloo-paaji-2", sans-serif;
+        font-size: 18px;
+        color: #1c1d66;
+    }
+
+    .review-content p {
+        margin: 0;
+        font-family: "baloo-paaji-2", sans-serif;
+        font-size: 16px;
+        color: #2e3192;
+        line-height: 1.4;
+    }
+
+    footer {
+        text-align: center;
+        padding: 12px 20px;
+        background-color: #e1f7ff;
+        border-top: 5px solid #2e3192;
+        margin-top: 0;
+    }
+    footer nav {
+        width: auto;
+        height: 20px;
+        background: transparent;
+        border: none;
+        margin-bottom: 6px;
+    }
+    footer nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    footer nav a {
+        font-family: "baloo-paaji-2", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: #2e3192;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    }
+    footer nav a:hover {
+        background-color: #2e3192;
+        color: #fff8ef;
+    }
+    footer p {
+        margin: 15px 0 0 0;
+        font-size: 14px;
+        font-family: "baloo-paaji-2", sans-serif;
+        color: #2e3192;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Spacecraft Café Logo" class="header-logo">
+    <div class="header-text">
+      <h1>Out-of-this-world coffee &amp; alien delicacies!</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-bg-wrapper">
+    <div class="container">
+      <main>
+        <img src="text5.png" alt="Testimonials Banner" class="banner-img">
+        
+        <section>
+          <h2>What the Universe is Saying</h2>
+          <div class="reviews-list">
+            
+            <div class="review-card">
+              <img src="person.png" alt="Emily Taylor">
+              <div class="review-content">
+                <h3>Emily Taylor from Barryton, Michigan</h3>
+                <p>"Best dark roast in the Milky Way! The zero-gravity seating was super comfortable for my 6 tentacles."</p>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <img src="person2.png" alt="Evan William">
+              <div class="review-content">
+                <h3>Evan William from Fort Dodge, Iowa</h3>
+                <p>"A great pitstop during long space flights. Highly recommend the Supernova Latte!"</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 Spacecraft Café &amp; Co. Designed by Franchesca Saint Louis</p>
+  </footer>
+</body>
+</html>

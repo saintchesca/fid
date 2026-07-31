@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spacecraft Café - Events</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/omj4xbq.css">
+  <style>
+    body {
+        background-color: #e1f7ff;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    header {
+        background-color: #e1f7ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+    }
+    .header-logo {
+        max-height: 200px;
+        width: auto;
+    }
+    .header-text h1 {
+        margin: 5px 0 0 0;
+        color: #2e3192;
+        font-size: 20px;
+        font-family: "baloo-paaji-2", sans-serif;
+    }
+    nav {
+        width: 100%;
+        background-color: #c4eeff;
+        height: 50px;
+        border-bottom: 5px solid #2e3192;
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    nav li {
+        height: 100%;
+    }
+    nav a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 1.8rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #2e3192;
+        transition: 0.2s ease, color 0.2s ease;
+    }
+    nav a, footer nav a {
+        font-family: "baloo-paaji-2", sans-serif;
+        font-weight: 600;
+    }
+    nav a:hover {
+        background-color: #2e3192;
+        color: #fff8ef;
+    }
+
+    .hero-image-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    .full-hero-img {
+        width: 100%;
+        height: 1100px;
+        object-fit: cover;
+        display: block;
+    }
+    .events-overlay {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        width: 90%;
+    }
+    .banner-img {
+        display: block;
+        margin-bottom: 30px;
+        max-width: 1000px;
+        width: 600%;
+        height: auto;
+    }
+    .events-overlay h2 {
+        font-family: "baloo-paaji-2", sans-serif;
+        color: #fff8ef;
+        font-size: 45px;
+        margin: 0 0 15px 0;
+        text-align: center;
+    }
+
+   
+    .events-flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
+   
+    .calendar-container {
+        background-color: #c4eeff;
+        border: 3px solid #2e3192;
+        border-radius: 12px;
+        padding: 20px;
+        width: 100%;
+        max-width: 650px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        font-family: "baloo-paaji-2", sans-serif;
+    }
+    .calendar-header h3 {
+        text-align: center;
+        color: #2e3192;
+        margin: 0 0 15px 0;
+        font-size: 28px;
+    }
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+        text-align: center;
+    }
+    .day-name {
+        font-weight: 600;
+        color: #2e3192;
+        padding-bottom: 5px;
+        font-size: 14px;
+    }
+    .day {
+        background-color: #ffffff;
+        border-radius: 6px;
+        padding: 12px 6px;
+        min-height: 55px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #2e3192;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .day.empty {
+        background-color: transparent;
+    }
+    .day.event {
+        background-color: #2e3192;
+        color: #fff8ef;
+    }
+    .event-tag {
+        font-size: 11px;
+        line-height: 1.1;
+        margin-top: 3px;
+        background-color: #e1f7ff;
+        color: #2e3192;
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+
+    .cards-portrait-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 420px;
+    }
+    .event-card-portrait {
+        background-color: #c4eeff;
+        border: 3px solid #2e3192;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        font-family: "baloo-paaji-2", sans-serif;
+    }
+    .event-card-portrait h3 {
+        margin: 0 0 10px 0;
+        color: #2e3192;
+        font-size: 24px;
+    }
+    .event-card-portrait p {
+        margin: 0;
+        color: #2e3192;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    
+    footer {
+        text-align: center;
+        padding: 12px 20px;
+        background-color: #e1f7ff;
+        border-top: 5px solid #2e3192;
+        margin-top: 0;
+    }
+    footer nav {
+        width: auto;
+        height: 20px;
+        background: transparent;
+        border: none;
+        margin-bottom: 6px;
+    }
+    footer nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    footer nav a {
+        font-family: "baloo-paaji-2", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: #2e3192;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    }
+    footer nav a:hover {
+       background-color: #2e3192;
+        color: #fff8ef;
+    }
+    footer p {
+        margin: 15px 0 0 0;
+        font-size: 14px;
+        font-family: "baloo-paaji-2", sans-serif;
+        color: #2e3192;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Spacecraft Café Logo" class="header-logo">
+    <div class="header-text">
+      <h1>Out-of-this-world coffee &amp; alien delicacies!</h1>
+    </div>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="review.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-image-wrapper">
+    <img src="../cafe/photo2.png" alt="Spacecraft Cafe Interior" class="full-hero-img">
+    
+    <div class="events-overlay">
+      <main>
+        <img src="text4.png" alt="event Banner" class="banner-img">
+        <h2>Weekly Gatherings</h2>
+        
+        <div class="events-flex-container">
+        
+          <div class="calendar-container">
+            <div class="calendar-header">
+              <h3>Cosmic Events Calendar</h3>
+            </div>
+            <div class="calendar-grid">
+              <div class="day-name">Sun</div><div class="day-name">Mon</div><div class="day-name">Tue</div><div class="day-name">Wed</div><div class="day-name">Thu</div><div class="day-name">Fri</div><div class="day-name">Sat</div>
+              
+              <div class="day empty"></div><div class="day empty"></div><div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day event">4 <span class="event-tag">Sci-Fi Movie</span></div><div class="day">5</div>
+              <div class="day">6</div><div class="day">7</div><div class="day event">8 <span class="event-tag">Alien Poetry</span></div><div class="day">9</div><div class="day">10</div><div class="day event">11 <span class="event-tag">Sci-Fi Movie</span></div><div class="day">12</div>
+              <div class="day">13</div><div class="day">14</div><div class="day event">15 <span class="event-tag">Alien Poetry</span></div><div class="day">16</div><div class="day">17</div><div class="day event">18 <span class="event-tag">Sci-Fi Movie</span></div><div class="day">19</div>
+              <div class="day">20</div><div class="day">21</div><div class="day event">22 <span class="event-tag">Alien Poetry</span></div><div class="day">23</div><div class="day">24</div><div class="day event">25 <span class="event-tag">Sci-Fi Movie</span></div><div class="day">26</div>
+              <div class="day">27</div><div class="day">28</div><div class="day event">29 <span class="event-tag">Alien Poetry</span></div><div class="day">30</div><div class="day">31</div><div class="day empty"></div><div class="day empty"></div>
+            </div>
+          </div>
+
+        
+          <div class="cards-portrait-wrapper">
+            <div class="event-card-portrait">
+              <h3>Alien Poetry Night</h3>
+              <p>Every Tuesday at 8 PM. Express yourself in any dialect or frequency!</p>
+            
+              <h3>Retro Sci-Fi Movie Marathon</h3>
+              <p>Every Friday night. Grab a Supernova Latte and watch classic Earth films.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="review.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 Spacecraft Café &amp; Co. Designed by Franchesca Saint Louis </p>
+  </footer>
+</body>
+</html>
