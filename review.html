@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Form - Chesca Studio</title>
+  <link rel="stylesheet" href="https://use.typekit.net/sef1wwn.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fffdf9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .modal-backdrop {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(45, 43, 42, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      box-sizing: border-box;
+      animation: popupSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes popupSlide {
+      from { opacity: 0; transform: translateY(20px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #2d2b2a;
+      line-height: 1;
+    }
+    
+    .modal-card h2 {
+      margin: 0 0 6px 0;
+      font-size: 1.4rem;
+      text-align: center;
+      color: #ff94a8;
+    }
+
+    .modal-card p.subtitle {
+      margin: 0 0 20px 0;
+      font-size: 0.9rem;
+      color: #77706e;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      text-align: center;
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #2d2b2a;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #2d2b2a;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #e2dad5;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #ff94a8;
+    }
+
+    .star-select {
+      display: flex;
+      gap: 8px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      justify-content: center;
+      margin-bottom: 18px;
+      user-select: none;
+    }
+
+    .star-select span {
+      color: #e0e0e0;
+      transition: color 0.15s ease;
+    }
+
+    .star-select span.selected,
+    .star-select span.hovered {
+      color: #ffb7c5;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #ff94a8;
+      color: #ffffff !important;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.95;
+    }
+
+    /* Thank You Screen Styles */
+    .thank-you-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .thank-you-screen.active {
+      display: flex;
+    }
+
+    .check-icon-img {
+      width: 70px;
+      height: auto;
+      margin-bottom: 16px;
+      animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="modal-backdrop" id="reviewPopupModal">
+  <div class="modal-card">
+    <button class="modal-close" id="closeReviewModalBtn">&times;</button>
+    
+    <!-- Review Form Container -->
+    <div id="reviewFormContainer">
+      <h2>Review Our Product</h2>
+      <p class="subtitle">We appreciate your feedback!</p>
+
+      <form id="standaloneReviewForm">
+        <label class="form-label">Overall Rating</label>
+        <div class="star-select" id="popupStarContainer">
+          <span data-value="1" class="selected">★</span>
+          <span data-value="2" class="selected">★</span>
+          <span data-value="3" class="selected">★</span>
+          <span data-value="4" class="selected">★</span>
+          <span data-value="5" class="selected">★</span>
+        </div>
+        <input type="hidden" id="popupSelectedRating" value="5">
+
+        <div class="form-group">
+          <label for="popupReviewerName">Your Name</label>
+          <input type="text" id="popupReviewerName" placeholder="e.g. Taylor S." required>
+        </div>
+
+        <div class="form-group">
+          <label for="popupReviewerFeedback">Your Review</label>
+          <textarea id="popupReviewerFeedback" rows="4" placeholder="Please share your experience with us..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Review</button>
+      </form>
+    </div>
+
+    <!-- Thank You Success Screen -->
+    <div class="thank-you-screen" id="thankYouScreen">
+      <!-- Direct path to check_icon.png in root folder -->
+      <img src="check_icon.png" alt="Success Check" class="check-icon-img">
+      <h2>Thank You!</h2>
+      <p class="subtitle">Your review has been successfully submitted and saved.</p>
+      <button class="submit-btn" id="backToShopBtn">Back to Shop</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function() {
+    const modal = document.getElementById('reviewPopupModal');
+    const closeBtn = document.getElementById('closeReviewModalBtn');
+    const starContainer = document.getElementById('popupStarContainer');
+    const stars = starContainer.querySelectorAll('span');
+    const ratingInput = document.getElementById('popupSelectedRating');
+    const form = document.getElementById('standaloneReviewForm');
+    const formContainer = document.getElementById('reviewFormContainer');
+    const thankYouScreen = document.getElementById('thankYouScreen');
+    const backToShopBtn = document.getElementById('backToShopBtn');
+
+    // Web App URL from Google Apps Script
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyK3zFFEj_5SsmShMEyzP-yWBvf_I0UV18awCCEaobTs7M36I1-jQkLZsOz3IPqBHFH/exec";
+
+    const goBackToShop = () => {
+      // Routes back to your main product showcase page
+      window.location.href = "preview.html";
+    };
+
+    closeBtn.addEventListener('click', goBackToShop);
+    backToShopBtn.addEventListener('click', goBackToShop);
+
+    let currentRating = 5;
+    stars.forEach((star, index) => {
+      star.addEventListener('mouseover', () => {
+        stars.forEach((s, idx) => s.classList.toggle('hovered', idx <= index));
+      });
+      star.addEventListener('mouseout', () => {
+        stars.forEach(s => s.classList.remove('hovered'));
+      });
+      star.addEventListener('click', () => {
+        currentRating = index + 1;
+        ratingInput.value = currentRating;
+        stars.forEach((s, idx) => s.classList.toggle('selected', idx < currentRating));
+      });
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector('.submit-btn');
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+
+      const payload = {
+        name: document.getElementById('popupReviewerName').value,
+        rating: parseInt(currentRating),
+        text: document.getElementById('popupReviewerFeedback').value,
+        date: new Date().toISOString().split('T')[0],
+        source: 'Chesca Studio'
+      };
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        formContainer.style.display = 'none';
+        thankYouScreen.classList.add('active');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an issue submitting your review. Please try again.');
+        submitBtn.textContent = 'Submit Review';
+        submitBtn.disabled = false;
+      });
+    });
+  })();
+</script>
+</body>
+</html>
